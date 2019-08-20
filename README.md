@@ -20,4 +20,4 @@ In order to run the project:
  - clone or download the project
  - install the dependecies using 'npm install'
  - run server using 'npm start'
- - navigate to index.ejs through your browser
+ - navigate to 'localhost:8888' in your browser
