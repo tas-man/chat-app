@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NodeChat</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/mdb.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body class="grey lighten-4">
+
+    <ul id="messages" class="list-group h-60"></ul>
+    <form id="chatForm" action="/" method="POST" class="form grey lighten-1 mt-1 p-2 fixed-bottom h-100">
+      <input id="msgInput" type="text" class="form-control mt-2 h-25" autocomplete="off" autofocus="on" placeholder="Type your message..."/>
+      <button type="submit" class="btn btn-dark btn-block mt-2 d-flex align-items-center justify-content-center h-25" autofocus>Send</button>
+      <button type="button" class="btn btn-default btn-block mt-2 mb-5 d-flex align-items-center justify-content-center h-25" data-toggle="modal" data-target="#roomModal" aria-hidden="true">
+        Join Another Room
+      </button>
+      <p id="emojiSelection" class="fixed-top ml-1">
+          <button class="emojiBtn border-0 rounded bg-default" value="&#x1F600">&#x1F600</button>
+          <button class="emojiBtn border-0 rounded bg-default" value="&#x1F496">&#x1F496</button>
+          <button class="emojiBtn border-0 rounded bg-default" value="&#x1F44D">&#x1F44D</button>
+      </p>
+    </form>
+   
+    <div id="roomModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="roomModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h1 id="roomModalLabel" class="modal-title">Join a chat room</h1>
+            <button type="button" class="close right" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+          </div>
+
+          <div id="roomList" class="modal-body">
+          </div>
+
+          <div class="modal-footer">
+              <form id="roomForm" action="/" method="POST" class="form w-100">
+                <label>or create e new one</label>
+                <input id="roomInput" type="text" class="form-control mb-4" autocomplete="off" autofocus="on" placeholder="Enter room name..."/>
+              <button type="submit" class="btn btn-dark float-right">Join</button>
+              <button type="button" class="btn btn-light float-right" data-dismiss="modal">Cancel</button>
+              </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="socket.io/socket.io.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="chat.js"></script>
+  </body>
+</html>

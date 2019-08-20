@@ -1,0 +1,35 @@
+body {
+  font-size: calc(42px - 1vw) !important;
+}
+
+#emojiSelection {
+  top: 64vh;
+}
+
+#messages {
+  max-height: 60vh;
+  overflow-y: scroll;
+}
+
+#messages li {
+  max-width: 100vw;
+  word-break: break-all;
+  text-overflow: ellipsis;
+}
+
+#messages li:nth-child(odd) {
+  background: #eee;
+}
+
+#chatForm {
+  max-height: 30vh;
+}
+
+#chatForm input, button{
+  font-size: 1.5rem !important;
+}
+
+#roomModal input {
+  height: 100px !important;
+  font-size: 1.5rem !important;
+}
